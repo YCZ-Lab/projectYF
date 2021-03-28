@@ -1,36 +1,10 @@
 import { Card, message } from 'antd';
-
-// import {FormattedMessage} from 'umi';
-// import type {RadioChangeEvent} from 'antd/es/radio';
 import React, { useEffect, useState } from 'react';
-// import type {VisitDataType} from '../data.d';
-// import {Pie} from './Charts1';
-// import Yuan from '../utils/Yuan';
 import styles from '../style.less';
 import { getBCSchoolsCOVID19MonthlySummary } from '@/pages/covid19/school/services/schoolsDashBoard';
 import { Pie } from '@ant-design/charts';
 
-const BCSchoolsCOVID19MonthlySummary = ({
-  loading,
-}: // dropdownGroup,
-// salesType,
-// salesPieData,
-// handleChangeSalesType,
-{
-  loading: boolean;
-  // dropdownGroup: React.ReactNode;
-  // salesType: 'all' | 'online' | 'stores';
-  // salesPieData: VisitDataType[];
-  // handleChangeSalesType?: (e: RadioChangeEvent) => void;
-}) => {
-  // let salesType: 'all' | 'online' | 'stores' = 'all';
-
-  // 监听SalesType改变事件(all:全部渠道 | online:线上 | stores:门店)
-  // const handleChangeSalesType = (e: RadioChangeEvent) => {
-  //   console.log(`SalesType改变事件: ${e.target.value}`);
-  //   salesType = e.target.value;
-  // };
-
+const BCSchoolsCOVID19MonthlySummary = ({ loading }: { loading: boolean }) => {
   // 双向数据绑定(响应式数据)
   const [bcSchoolsCOVID19MonthlySummary, setBCSchoolsCOVID19MonthlySummary] = useState<
     API.BCSchoolsMonthlySummaryListItem[]

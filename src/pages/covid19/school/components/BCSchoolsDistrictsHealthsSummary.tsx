@@ -5,7 +5,6 @@ import type moment from 'moment';
 
 import React, { useEffect, useRef, useState } from 'react';
 import numeral from 'numeral';
-// import {Bar} from './Charts1';
 import styles from '../style.less';
 import { getTimeDistance } from '@/utils/utils';
 import {

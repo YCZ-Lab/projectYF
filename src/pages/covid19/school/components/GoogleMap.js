@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react';
-import { getBCSchoolsCOVID19GoogleMapSummary } from '../../services/schoolsDashBoard';
+import { getBCSchoolsCOVID19GoogleMapSummary } from '../services/schoolsDashBoard';
 import { message, Badge } from 'antd';
 
 // InfoWindow component
@@ -76,15 +75,6 @@ class GoogleMap extends Component {
   }
 
   componentDidMount() {
-    // fetch('/places.json')
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     data.results.forEach((result) => {
-    //       result.show = false; // eslint-disable-line no-param-reassign
-    //     });
-    //     this.setState({places: data.results});
-    //   });
-
     getBCSchoolsCOVID19GoogleMapSummary()
       .then((response) => {
         if (response.status !== 200) {
@@ -134,22 +124,6 @@ class GoogleMap extends Component {
 
     return (
       <>
-        {/* <GoogleMap */}
-        {/*  defaultZoom={10} */}
-        {/*  defaultCenter={[34.0522, -118.2437]} */}
-        {/*  bootstrapURLKeys={{key: 'AIzaSyC3LSbHlnSlG5aWQE3hBJYFt8E9KgxowJ8'}} */}
-        {/*  onChildClick={this.onChildClickCallback} */}
-        {/* > */}
-        {/*  {places.map((place) => ( */}
-        {/*    <Marker */}
-        {/*      key={place.id} */}
-        {/*      lat={place.geometry.location.lat} */}
-        {/*      lng={place.geometry.location.lng} */}
-        {/*      show={place.show} */}
-        {/*      place={place} */}
-        {/*    /> */}
-        {/*  ))} */}
-        {/* </GoogleMap> */}
         <GoogleMapReact
           resetBoundsOnResize={true}
           defaultZoom={11}

@@ -1,12 +1,10 @@
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { Col, message, Row, Tooltip } from 'antd';
-
 import { FormattedMessage } from 'umi';
 import React, { useEffect, useState } from 'react';
 import numeral from 'numeral';
 import { ChartCard, Field } from './Charts1';
 import Trend from './Trend';
-// import Yuan from '../utils/Yuan';
 import styles from '../style.less';
 import { getBCSchoolsCOVID19TotalSummary } from '../services/schoolsDashBoard';
 

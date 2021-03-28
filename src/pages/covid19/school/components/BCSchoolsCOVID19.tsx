@@ -1,11 +1,3 @@
-// import {InfoCircleOutlined} from '@ant-design/icons';
-// import {Card, Col, Row, Table, Tooltip} from 'antd';
-// import numeral from 'numeral';
-// import {VisitDataType} from '../data.d';
-// import {MiniArea} from './Charts1';
-// import NumberInfo from './NumberInfo';
-// import Trend from './Trend';
-// import styles from '../style.less';
 import { FormattedMessage } from 'umi';
 import React, { useEffect, useRef, useState } from 'react';
 import type { ProColumns } from '@ant-design/pro-table';
