@@ -165,7 +165,7 @@ const columns: ProColumns<API.BCSchoolsCOVID19ListItem>[] = [
         //     {record.id}
         //   </a>
         // </Popover>
-        <Image width={30} height={15} src={`${record.documentation}.jpeg`} />
+        <Image width={30} height={15} src={record.documentation} />
       );
     },
   },

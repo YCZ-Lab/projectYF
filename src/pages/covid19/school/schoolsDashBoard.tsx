@@ -13,7 +13,9 @@ import PageLoading from './components/PageLoading';
 import type { AnalysisData } from './data.d';
 import styles from './style.less';
 
-import { Map } from './components/Charts2';
+// import {Map} from './components/Charts2';
+import GoogleMap from './components/googleMap/GoogleMap';
+
 // import ActiveChart from './components/ActiveChart';
 // import {ChartCard, Field} from '@/pages/covid19/school/components/Charts1';
 // import {InfoCircleOutlined} from '@ant-design/icons';
@@ -132,7 +134,7 @@ class DashboardAnalysis extends Component<DashboardAnalysisProps, DashboardAnaly
                 }
               >
                 <div className={styles.mapChart}>
-                  <Map />
+                  <GoogleMap />
                 </div>
               </Card>
             </Col>

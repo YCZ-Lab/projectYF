@@ -72,3 +72,9 @@ export async function getBCSchoolsCOVID19MonthlySummary(
     params,
   });
 }
+
+export async function getBCSchoolsCOVID19GoogleMapSummary() {
+  return request('/public/bcSchoolsCOVID19GoogleMapSummary', {
+    method: 'GET',
+  });
+}

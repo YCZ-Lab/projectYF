@@ -1,0 +1,17 @@
+{
+  "name": "Project Y",
+  "short_name": "Y",
+  "start_url": "/index.html",
+  "background_color": "#FF8800",
+  "description": "Project Y",
+  "display": "standalone",
+  "background_color": "#FF8800",
+  "theme_color": "#FF8800",
+  "icons": [
+    {
+      "src": "resources/Y192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
