@@ -49,7 +49,7 @@ class DashboardAnalysis extends Component<DashboardAnalysisProps> {
                   title={
                     <FormattedMessage
                       id="bc-covid19-summary"
-                      defaultMessage="Real-Time COVID19 Summary"
+                      defaultMessage="last 14 days COVID19 Summary"
                     />
                   }
                 >

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { getBCSchoolsCOVID19GoogleMapSummary } from '../services/schoolsDashBoard';
-import { message, Badge } from 'antd';
+import { message, Badge, Tag } from 'antd';
 
 // InfoWindow component
 const InfoWindow = (props) => {
@@ -21,9 +21,45 @@ const InfoWindow = (props) => {
   return (
     <div style={infoWindowStyle}>
       <div style={{ fontSize: 16 }}>{place.schoolName}</div>
-      <div style={{ fontSize: 14 }}>Total: {place.count}</div>
-      <div style={{ fontSize: 14 }}>Grade: {place.gradeRange}</div>
-      <div style={{ fontSize: 14 }}>在校人数: {place.enrolmentTotal}</div>
+      <div style={{ fontSize: 14 }}>
+        <Tag
+          style={{
+            textAlign: 'right',
+            minWidth: '50px',
+            border: 'none',
+            backgroundColor: 'rgba(255,255,255,1)',
+          }}
+        >
+          total:
+        </Tag>
+        {place.count}
+      </div>
+      <div style={{ fontSize: 14 }}>
+        <Tag
+          style={{
+            textAlign: 'right',
+            minWidth: '50px',
+            border: 'none',
+            backgroundColor: 'rgba(255,255,255,1)',
+          }}
+        >
+          grade:
+        </Tag>
+        {place.gradeRange}
+      </div>
+      <div style={{ fontSize: 14 }}>
+        <Tag
+          style={{
+            textAlign: 'right',
+            minWidth: '50px',
+            border: 'none',
+            backgroundColor: 'rgba(255,255,255,1)',
+          }}
+        >
+          total:
+        </Tag>
+        {place.enrolmentTotal} (enrolment total)
+      </div>
       {/* <div style={{fontSize: 14}}> */}
       {/*  <span style={{color: 'grey'}}> */}
       {/*    {place.rating} */}

@@ -29,7 +29,7 @@ const columns: ProColumns<API.BCSchoolsCOVID19ListItem>[] = [
     dataIndex: 'schoolName',
     key: 'schoolName',
     copyable: true,
-    ellipsis: true,
+    // ellipsis: true,
     width: 205,
     render(text: any, record: API.BCSchoolsCOVID19ListItem) {
       const url = `/info/schools/${record.schoolId}`;
@@ -70,7 +70,7 @@ const columns: ProColumns<API.BCSchoolsCOVID19ListItem>[] = [
     dataIndex: 'exposureNumber',
     key: 'exposureNumber',
     valueType: 'digit',
-    width: 100,
+    width: 180,
     search: false,
     sorter: (a: { exposureNumber: number }, b: { exposureNumber: number }) =>
       a.exposureNumber - b.exposureNumber,
@@ -92,7 +92,7 @@ const columns: ProColumns<API.BCSchoolsCOVID19ListItem>[] = [
     dataIndex: 'exposureDate',
     key: 'exposureDate',
     width: 180,
-    // ellipsis: true,
+    ellipsis: true,
     search: false,
   },
   {
@@ -107,7 +107,7 @@ const columns: ProColumns<API.BCSchoolsCOVID19ListItem>[] = [
     key: 'districtAbb',
     // sorter: (a: { count: number }, b: { count: number }) => a.count - b.count,
     // className: styles.alignRight,
-    width: 60,
+    // width: 60,
     render(text: any, record: API.BCSchoolsCOVID19ListItem) {
       return (
         <Tag color="green" style={{ width: '120px' }}>
@@ -126,11 +126,11 @@ const columns: ProColumns<API.BCSchoolsCOVID19ListItem>[] = [
     align: 'center',
     dataIndex: 'notificationMethod',
     key: 'notificationMethod',
-    width: 120,
+    width: 180,
     // ellipsis: true,
     render(text) {
       return (
-        <Tag color="green" style={{ width: '120px' }}>
+        <Tag color="green" style={{ minWidth: '120px' }}>
           {text}
         </Tag>
       );
@@ -169,8 +169,12 @@ const columns: ProColumns<API.BCSchoolsCOVID19ListItem>[] = [
     dataIndex: 'extraInfo',
     key: 'extraInfo',
     search: false,
-    width: 180,
+    hideInTable: true,
+    // width: 80,
     // ellipsis: true,
+    // render(text: any, record: API.BCSchoolsCOVID19ListItem) {
+    //   return ();
+    // }
   },
   {
     title: (
@@ -318,51 +322,51 @@ const BCSchoolsCOVID19 = ({
     const config = {
       data: [
         {
-          grade: '1年级',
+          grade: 'grade 1',
           number: record.schoolsInfo.grade1Enrolment,
         },
         {
-          grade: '2年级',
+          grade: 'grade 2',
           number: record.schoolsInfo.grade2Enrolment,
         },
         {
-          grade: '3年级',
+          grade: 'grade 3',
           number: record.schoolsInfo.grade3Enrolment,
         },
         {
-          grade: '4年级',
+          grade: 'grade 4',
           number: record.schoolsInfo.grade4Enrolment,
         },
         {
-          grade: '5年级',
+          grade: 'grade 5',
           number: record.schoolsInfo.grade5Enrolment,
         },
         {
-          grade: '6年级',
+          grade: 'grade 6',
           number: record.schoolsInfo.grade6Enrolment,
         },
         {
-          grade: '7年级',
+          grade: 'grade 7',
           number: record.schoolsInfo.grade7Enrolment,
         },
         {
-          grade: '8年级',
+          grade: 'grade 8',
           number: record.schoolsInfo.grade8Enrolment,
         },
         {
-          grade: '9年级',
+          grade: 'grade 9',
           number: record.schoolsInfo.grade9Enrolment,
         },
         {
-          grade: '10年级',
+          grade: 'grade 10',
           number: record.schoolsInfo.grade10Enrolment,
         },
         {
-          grade: '11年级',
+          grade: 'grade 11',
           number: record.schoolsInfo.grade11Enrolment,
         },
         {
-          grade: '12年级',
+          grade: 'grade 12',
           number: record.schoolsInfo.grade12Enrolment,
         },
       ],
@@ -390,39 +394,127 @@ const BCSchoolsCOVID19 = ({
         </Divider>
         <Row>
           <Col xl={6} lg={6} md={6} sm={6} xs={6}>
-            <ProDescriptions column={1} title={'学校信息'} size={'small'}>
-              <ProDescriptions.Item label="名称">
+            <ProDescriptions column={1} title={'school info'} size={'small'}>
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  name:
+                </Tag>
                 {record.schoolsInfo.schoolName}
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="类别">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  category:
+                </Tag>
                 <Tag color={'green'} style={{ width: '120px', textAlign: 'center' }}>
                   {record.schoolsInfo.schoolCategory}
                 </Tag>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="类型">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  type:
+                </Tag>
                 <Tag color={'green'} style={{ width: '120px', textAlign: 'center' }}>
                   {record.schoolsInfo.schoolType}
                 </Tag>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="年级">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  grade:
+                </Tag>
                 <Tag color={'green'} style={{ width: '120px', textAlign: 'center' }}>
                   {record.schoolsInfo.gradeRange}
                 </Tag>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="人数">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  total:
+                </Tag>
                 <Tag color={'green'} style={{ width: '120px', textAlign: 'center' }}>
                   {record.schoolsInfo.enrolmentTotal}
                 </Tag>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="编码">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  postcode:
+                </Tag>
                 <Tag color={'green'} style={{ width: '120px', textAlign: 'center' }}>
                   {record.schoolsInfo.postalCode}
                 </Tag>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="地址">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  address:
+                </Tag>
                 <a href="geopoint:108.954823,34.275891">{record.schoolsInfo.schoolAddress}</a>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="城市">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '80px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  city:
+                </Tag>
                 {record.schoolsInfo.city} {record.schoolsInfo.province}
               </ProDescriptions.Item>
             </ProDescriptions>
@@ -431,30 +523,78 @@ const BCSchoolsCOVID19 = ({
             <Divider type={'vertical'} style={{ height: '150px' }}></Divider>
           </Col>
           <Col xl={5} lg={5} md={5} sm={5} xs={5}>
-            <ProDescriptions column={1} title={'联系人信息'} size={'small'}>
-              <ProDescriptions.Item label=" 联系人">
+            <ProDescriptions column={1} title={'contact information'} size={'small'}>
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  name:
+                </Tag>
                 {record.schoolsInfo.principalFirstName} {record.schoolsInfo.principalLastName}{' '}
                 {record.schoolsInfo.principalTitle}.
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="移动电话">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  telephone:
+                </Tag>
                 <a href={`tel:${record.schoolsInfo.schoolPhone}`}>
                   {record.schoolsInfo.schoolPhone}
                 </a>
               </ProDescriptions.Item>
               {/* eslint-disable-next-line no-template-curly-in-string */}
-              <ProDescriptions.Item label="电子邮件">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  email:
+                </Tag>
                 <a href={`mailto:${record.schoolsInfo.schoolEmail}`}>
                   {record.schoolsInfo.schoolEmail}
                 </a>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="电子传真">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  fax:
+                </Tag>
                 {record.schoolsInfo.schoolFax}
               </ProDescriptions.Item>
             </ProDescriptions>
           </Col>
           <Col xl={6} lg={6} md={6} sm={6} xs={6}>
             <Row>
-              <ProDescriptions column={1} title={'各年级在校人数'} size={'small'}></ProDescriptions>
+              <ProDescriptions
+                column={1}
+                title={'number of students in each grade'}
+                size={'small'}
+              ></ProDescriptions>
             </Row>
             <Row>
               <Col>
@@ -466,30 +606,96 @@ const BCSchoolsCOVID19 = ({
             <Divider type={'vertical'} style={{ height: '150px' }}></Divider>
           </Col>
           <Col xl={5} lg={5} md={5} sm={5} xs={5} style={{ paddingLeft: '20px' }}>
-            <ProDescriptions column={1} title={'教育局信息'} size={'small'}>
-              <ProDescriptions.Item label="名称">
+            <ProDescriptions column={1} title={'school district info'} size={'small'}>
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  name:
+                </Tag>
                 {record.schoolsInfo.schoolDistrict.districtName} (
                 {record.schoolsInfo.schoolDistrict.districtAbb})
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="网址">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  website:
+                </Tag>
                 <a target={'_blank'} href={record.schoolsInfo.schoolDistrict.districtWebAddress}>
                   {record.schoolsInfo.schoolDistrict.districtWebAddress}
                 </a>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="电话">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  telephone:
+                </Tag>
                 <a href={`tel:${record.schoolsInfo.schoolDistrict.districtPhone}`}>
                   {record.schoolsInfo.schoolDistrict.districtPhone}
                 </a>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="传真">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  fax:
+                </Tag>
                 {record.schoolsInfo.schoolDistrict.districtFax}
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="邮编">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  postcode:
+                </Tag>
                 <Tag color={'green'} style={{ width: '120px', textAlign: 'center' }}>
                   {record.schoolsInfo.schoolDistrict.postalCode}
                 </Tag>
               </ProDescriptions.Item>
-              <ProDescriptions.Item label="地址">
+              <ProDescriptions.Item>
+                <Tag
+                  style={{
+                    textAlign: 'right',
+                    minWidth: '90px',
+                    border: 'none',
+                    fontSize: '16px',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                  }}
+                >
+                  address:
+                </Tag>
                 {record.schoolsInfo.schoolDistrict.address}
               </ProDescriptions.Item>
             </ProDescriptions>
