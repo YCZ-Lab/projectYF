@@ -164,7 +164,7 @@ class GoogleMap extends Component {
           resetBoundsOnResize={true}
           defaultZoom={11}
           defaultCenter={[49.2, -122.9]}
-          bootstrapURLKeys={{ key: 'AIzaSyC3LSbHlnSlG5aWQE3hBJYFt8E9KgxowJ8' }}
+          bootstrapURLKeys={{ key: 'AIzaSyC3LSbHlnYCZSlG5aWQE3hBJYFt8E9KgxowJ8' }}
           onChildMouseEnter={this.onChildEnterCallback}
           onChildMouseLeave={this.onChildLeaveCallback}
         >
